@@ -1,0 +1,222 @@
+// ag-grid.scss defines structural styles and should be imported first
+@import "~ag-grid-community/src/styles/ag-grid.scss";
+@import "~ag-grid-community/src/styles/ag-theme-base/sass/ag-theme-base-mixin.scss";
+@import "~ag-grid-community/src/styles/webfont/agGridAlpineFont.scss";
+
+$ag-bal-icons-path: '~ag-grid-community/src/styles/ag-theme-balham/icons/';
+$ag-icons-path: '~ag-grid-community/src/styles/ag-theme-base/icons/';
+
+.ag-theme-balham {
+  @import '~ag-grid-community/src/styles/ag-theme-balham/sass/ag-theme-balham-mixin.scss';
+  @include ag-theme-balham();
+}
+
+.ag-theme-finance {
+  @import './ag_theme_finance/ag_theme_finance.scss';
+  @include ag-theme-finance();
+
+  .ag-row.total {
+    line-height: 30px;
+  }
+}
+
+.ag-react-container {
+  height: 100%;
+  width: 100%;
+
+  overflow: visible;
+}
+
+.ag-header-cell {
+  overflow: visible;
+}
+
+.rt-container {
+  height: 100%;
+  width: 100%;
+}
+
+.rt-column-menu-button {
+  // attempts to get menu popping out
+  // overflow-x: auto;
+  // overflow-y: auto;
+  overflow: visible;
+
+  width: 15px;
+  text-align: center;
+}
+
+.rt-finance-cell-container {
+  // attempts to get menu popping out
+  // overflow-x: auto;
+  // overflow-y: auto;
+  overflow: visible;
+
+
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3px 1fr 3px;
+  grid-template-rows: 3px minmax(2px,1fr) 3px;
+
+  .top-left {
+    grid-column: 1;
+    grid-row: 1;
+    // background-color: lightgreen;
+  }
+  .top {
+    grid-column: 2;
+    grid-row: 1;
+    // background-color: grey;
+  }
+  .top-right {
+    grid-column: 3;
+    grid-row: 1;
+    // background-color: cyan;
+  }
+  .left {
+    grid-column: 1;
+    grid-row: 2;
+    // background-color: khaki;
+  }
+  .center {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 1px;
+    background-color: #fff;
+  }
+  .right {
+    grid-column: 3;
+    grid-row: 2;
+    // background-color: lightcoral;
+  }
+  .bottom-left {
+    grid-column: 1;
+    grid-row: 3;
+    // background-color: lightgreen;
+  }
+  .bottom {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .bottom-right {
+    grid-column: 3;
+    grid-row: 3;
+    // background-color: cyan;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.underline {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-shadow: 0px -1px 0px #000000 inset;  
+}
+
+.strong-underline {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-shadow: 0px -2px 0px #000000 inset;
+}
+
+.total-overline {
+  border-top: 1px solid #0000ff; 
+}
+
+.total-underline {
+  border-top: 1px solid #0000ff;
+  border-bottom: 1px solid #0000ff;
+}
+
+.rt-header-menu-button {
+  display: none;
+  
+  overflow: visible;
+}
+
+.rt-header-cell:hover .rt-header-menu-button {
+  display: block
+}
+
+.rt-header-cell-left {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.rt-header-cell-right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;  
+}
+
+.nonNumeric {
+  text-align: left;
+}
+
+.numeric {
+  text-align: right;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.subtotal {
+  font-style: italic;
+  font-weight: bold !important;
+}
+
+.total {
+  font-weight: bold !important;
+}
+
+.showOnHover {
+  opacity: 0.0;
+}
+
+.showOnHover:hover {
+  opacity: 1.0;
+}
+
+#columnMenu {
+  position: absolute;
+  height: auto;
+  width: auto;
+  padding: 5px;
+  background-color: #eee;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  font-family: sans-serif;
+  font-size: 12px;
+  z-index: 2;
+}
+
+.rt-report-table-column-menu {
+  font-family: sans-serif;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.rt-report-table-column-submenu {
+  display: grid;
+  grid-template-columns: auto auto;
+  
+  font-family: sans-serif;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.rt-grid-item {
+  padding: 2px
+}

@@ -1,0 +1,54 @@
+// Demonstrates how to extend the base theme and add your own styles
+
+// NOTE: the base theme is a very basic theme, with as little as possible in the way of
+// opinionated design decisions. This makes it a good base for visually distinctive themes
+// that look very different to the provided themes (Alpine, Balham, Material).
+
+@import "~ag-grid-community/src/styles/ag-theme-base/sass/ag-theme-base-mixin.scss";
+
+@mixin ag-theme-finance {
+  // pass parameters to the base theme to control look and feel
+  @include ag-theme-base((
+    // grid-size: 2px,
+    borders: false,
+    foreground-color: #000,
+    background-color: #fff,
+  ));
+
+  font-family: Open Sans,Helvetica,Arial,Noto Sans TC, Noto Sans SC,sans-serif;
+
+  .ag-header-group-cell {
+    font-weight: bold;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .ag-header-cell {
+    font-weight: bold;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .ag-cell {
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .ag-cell-value {
+    font-size: 14px;
+    background-color: #ffffff; // for some reason this makes rowspanning work again
+  }
+}
+
+// for example purposes, remove margin and padding of the grid and also removing the outline from focused items.
+html,
+body {
+  margin: 0;
+  padding: 2px;
+  height: 100%;
+  *:focus {
+    outline: none;
+  }
+}
